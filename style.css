@@ -1,0 +1,1061 @@
+@charset "utf-8";
+
+/* 全体css */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.5;
+    background-color: #d5e8fd;
+    font-size: 20px;
+    font-family: "Zen Maru Gothic", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+ul,
+ol {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+h4 {
+    font-size: 25px;
+}
+
+p {
+    font-size: 20px;
+    color: #003b9b;
+}
+
+.pink {
+    color: #ea4e99;
+}
+
+.blue {
+    color: #00afec;
+}
+
+.yellow {
+    color: #ffff00;
+}
+
+.lightblue {
+    color: #7ca4e4;
+}
+
+/* header css */
+header {
+    max-width: 1960px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    background-color: #003b9b;
+}
+
+#header-box {
+    display: flex;
+    align-items: end;
+    height: 90px;
+}
+
+#header-box h1 a img {
+    height: 100px;
+    padding: 30px 10px 20px 10px;
+}
+
+#header-box h1,
+nav {
+    width: 50%;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+    padding: 20px;
+}
+
+nav ul li {
+    width: 20%;
+    text-align: center;
+}
+
+nav ul li a {
+    display: block;
+    font-size: 14px;
+    color: #fff;
+}
+
+nav ul .entry-button {
+    width: 30%;
+    background-color: #ffff00;
+}
+
+nav ul .entry-button a {
+    padding: 10px 0;
+    font-size: clamp(14px, 1.5vw, 20px);
+    color: #ea4e99;
+}
+
+/* hamburger-menu pc非表示 */
+.hamburger-menu {
+    display: none;
+}
+
+.menu-icon {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 90;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+}
+
+.menu-icon span,
+.menu-icon span:before,
+.menu-icon span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background-color: #003b9b;
+    position: absolute;
+}
+
+.menu-icon span:before {
+    bottom: 8px;
+}
+
+.menu-icon span:after {
+    top: 8px;
+}
+
+#menu-btn:checked~.menu-icon span {
+    background-color: #fff;
+}
+
+#menu-btn:checked~.menu-icon span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+
+#menu-btn:checked~.menu-icon span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+/* チェックボタン非表示 */
+#menu-btn {
+    display: none;
+}
+
+#menu-content {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    z-index: 80;
+    width: 40%;
+    height: 100%;
+    background-color: #ffffffE6;
+}
+
+#menu-content ul {
+    padding: 70px 10px 0;
+}
+
+#menu-content ul li {
+    border-bottom: solid 1px #003b9b;
+    list-style: none;
+}
+
+#menu-content ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 9px 15px 10px 0;
+    font-size: 16px;
+    color: #003b9b;
+}
+
+#menu-btn:checked~#menu-content {
+    right: 0;
+    transition: all 0.5s;
+}
+
+/* under-entry-button pc非表示 */
+#under-entry-button {
+    display: none;
+}
+
+#under-entry-button a {
+    width: 100%;
+    padding: 10px 0;
+    cursor: pointer;
+    text-align: center;
+    background-color: #ffff00;
+    display: block;
+    color: #ea4e99;
+}
+
+/* main */
+/* top */
+#content {
+    max-width: 1960px;
+    width: 100%;
+}
+
+.inner {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#top {
+    position: relative;
+}
+
+#top-text .inner::before {
+    content: "";
+    display: block;
+    height: 250px;
+}
+
+#top-text h3 {
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    color: #003b9b;
+}
+
+#sub-box {
+    margin: 60px 0 0 0;
+    border-radius: 100px 0;
+    background-color: #003b9b;
+}
+
+#sub-text .inner {
+    padding: 130px 0 0 0;
+}
+
+#sub-text .inner p {
+    line-height: 2;
+    text-align: center;
+    color: #fff;
+}
+
+#sub-text .inner br {
+    display: none;
+}
+
+#sub-text .inner p .yellow {
+    font-size: 25px;
+}
+
+/* point */
+#point .inner {
+    padding-bottom: 130px;
+}
+
+#point-image {
+    position: relative;
+    top: 80px;
+    left: 42px;
+    z-index: 1;
+    max-width: 100px;
+}
+
+#point h2 {
+    text-indent: 150px;
+    font-size: 35px;
+    color: #fff;
+}
+
+#point-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#point-flex .point-box {
+    position: relative;
+    width: 300px;
+    margin: 10px;
+    aspect-ratio: 1;
+    box-shadow: 10px 10px 0 #ffce5b;
+    background-color: #fff;
+}
+
+#point-flex .point-text {
+    background-color: #ea4e99;
+}
+
+#point-flex .point-text h3 {
+    padding: 30px 10px;
+    text-align: center;
+    font-size: 23px;
+    color: #fff;
+}
+
+.point-detail1 {
+    width: 100%;
+    height: 60%;
+    background-image: url(image/illust/asagao.png);
+    background-size: 60px;
+    background-position: right 10px bottom;
+    background-repeat: no-repeat;
+    background-color: #fff;
+}
+
+.point-detail2 {
+    width: 100%;
+    height: 60%;
+    background-image: url(image/illust/uchiwa.png);
+    background-size: 60px;
+    background-position: right 10px bottom;
+    background-repeat: no-repeat;
+    background-color: #fff;
+}
+
+.point-detail3 {
+    width: 100%;
+    height: 60%;
+    background-image: url(image/illust/ukiwa.png);
+    background-size: 60px;
+    background-position: right 10px bottom;
+    background-repeat: no-repeat;
+    background-color: #fff;
+}
+
+.point-detail1 p,
+.point-detail2 p,
+.point-detail3 p {
+    padding: 15px;
+    text-align: justify;
+    font-size: 16px;
+    color: #003b9b;
+}
+
+/* course */
+#course {
+    background-image: url(image/back01.jpg);
+    border-radius: 100px 0;
+}
+
+#course .inner {
+    padding: 147px 30px;
+}
+
+#course h2 {
+    width: 250px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #fff;
+    color: #003b9b;
+}
+
+#course-craft {
+    margin: 50px 0 25px 0;
+    border: 3px solid #ea4e99;
+    background-color: #fff;
+}
+
+#course-craft h3 {
+    padding: 20px;
+    background-color: #ea4e99;
+    color: #fff;
+}
+
+#course-craft h4 {
+    color: #ea4e99;
+}
+
+#course-programming {
+    border: 3px solid #00afec;
+    background-color: #fff;
+}
+
+
+#course-programming h3 {
+    padding: 20px;
+    background-color: #00afec;
+    color: #fff;
+}
+
+#course-programming h4 {
+    color: #00afec;
+}
+
+.small-font {
+    font-size: 25px;
+}
+
+.course-flex {
+    display: flex;
+}
+
+#course img {
+    border-radius: 50%;
+}
+
+#course .course-text {
+    width: 70%;
+    padding: 30px;
+}
+
+#course .course-image {
+    width: 30%;
+    padding: 30px;
+}
+
+/* programming */
+#programming-text {
+    text-align: center;
+    background-image: url(image/back02.jpg);
+    background-color: #003b9b;
+    background-size: 100%;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+#programming-text .inner {
+    padding: 130px 0 130px 0;
+}
+
+#programming h2 {
+    font-size: 35px;
+    color: #fff;
+}
+
+#programming h3 {
+    font-size: 30px;
+    color: #fff;
+}
+
+#programming-text p {
+    color: #fff;
+}
+
+#programming-text1 ul {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 50px 0;
+    text-align: left;
+}
+
+#programming-text1 ul li {
+    color: #fff;
+}
+
+#programming-text1 p img {
+    margin: 0 auto;
+}
+
+#programming-text2 {
+    padding: 50px 0 0 0;
+}
+
+#programming-text2 .big-text {
+    padding: 0 0 20px 0;
+}
+
+#programming-guide .inner {
+    padding: 130px 0 50px 0;
+}
+
+#programming-guide h2 {
+    padding: 10px;
+    margin: 0 auto 50px auto;
+    width: 50%;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 35px;
+    background-color: #ea4e99;
+}
+
+#guide-flex {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+    height: 33%;
+    aspect-ratio: 1;
+    margin: 10px;
+    text-align: center;
+    background-color: #00afec;
+    border-radius: 50%;
+    color: #fff;
+}
+
+#guide-flex p {
+    font-size: 16px;
+}
+
+#programming-teacher-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#programming-teacher figure {
+    padding: 30px;
+}
+
+#programming-teacher figure img {
+    border-radius: 10px;
+}
+
+#programming-teacher figure figcaption {
+    color: #003b9b;
+}
+
+#programming-teacher #teacher-text {
+    padding: 30px 30px 30px 0;
+}
+
+/* link */
+#link {
+    padding: 130px 0 0 0;
+}
+
+#link .inner {
+    width: 90%;
+    margin: auto;
+    padding: 50px 0;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #003b9b;
+}
+
+#link p {
+    font-size: 16px;
+    color: #fff;
+}
+
+#link a {
+    font-size: 16px;
+    color: #7ca4e4;
+}
+
+/* about */
+#about {
+    text-align: center;
+}
+
+#about .inner {
+    padding: 130px 0 0 0;
+}
+
+#about h2 {
+    width: 100%;
+    text-align: center;
+    color: #003b9b;
+}
+
+#about .inner p {
+    margin: 50px 0;
+}
+
+#about-image {
+    display: flex;
+}
+
+#about-image img {
+    margin: 10px;
+    border-radius: 10px;
+}
+
+/* entry */
+#entry .inner {
+    padding: 130px 0;
+}
+
+#entry a {
+    display: block;
+    text-align: center;
+    width: 33%;
+    margin: 0 auto;
+    padding: 13px 0;
+    font-size: 28px;
+    background-color: #ffff00;
+    color: #ea4e99;
+}
+
+#entry p {
+    text-align: center;
+    color: #003b9b;
+}
+
+/* entryページ ここから */
+#entry-page .inner {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+#entry-top h2 {
+    width: 80%;
+    margin: 0 auto;
+    padding: 5px;
+    background-color: #003b9b;
+    text-align: center;
+    color: #fff;
+}
+
+#entry-title {
+    margin: 30px 0;
+    text-align: center;
+    color: #003b9b;
+}
+
+#entry-top {
+    padding: 50px 0 0 0;
+}
+
+#entry-top p {
+    text-align: center;
+}
+
+#entry-top dl {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    margin: 10px auto;
+}
+
+#entry-top dl dt {
+    width: 25%;
+    font-size: 16px;
+    color: #003b9b;
+    border-bottom: 1px solid #003b9b;
+}
+
+#entry-top dl dd {
+    width: 75%;
+    font-size: 16px;
+    color: #003b9b;
+    border-bottom: 1px solid #003b9b;
+}
+
+#entry-top .highlight {
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 16px;
+    color: #d4455d;
+}
+
+/* form */
+#form {
+    width: 80%;
+    margin: 0 auto;
+}
+
+fieldset {
+    border: none;
+    margin: 30px 0;
+}
+
+.full-width {
+    width: 100%;
+    height: 30px;
+    border: 1px solid #003b9b;
+    background-color: #fff;
+}
+
+#form select {
+    display: block;
+    width: 28%;
+    height: 30px;
+    border: 1px solid #003b9b;
+    background-color: #fff;
+}
+
+#form label {
+    font-size: 16px;
+    color: #003b9b;
+}
+
+.required {
+    font-size: 14px;
+    color: #d4455d;
+}
+
+legend {
+    text-align: left;
+    color: #00afec;
+}
+
+.notes {
+    font-size: 12px;
+    color: #d4455d;
+}
+
+.radio {
+    font-size: 16px;
+    color: #003b9b;
+}
+
+.radio label {
+    display: block;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    border: 1px solid #003b9b;
+}
+
+#submit {
+    width: 30%;
+    margin: 0 auto;
+}
+
+input[name="submit"] {
+    width: 100%;
+    height: 30px;
+    margin: 0 0 50px 0;
+    border: 1px solid #003b9b;
+    font-size: 20px;
+    font-family: "Zen Maru Gothic", sans-serif;
+    color: #003b9b;
+    background-color: #ffff00;
+}
+
+/* footer */
+footer {
+    text-align: center;
+    background-color: #003b9b;
+}
+
+#footer-box {
+    padding: 70px;
+}
+
+footer a {
+    border-bottom: 1px solid #fff;
+    font-size: 14px;
+    color: #fff;
+}
+
+footer p {
+    font-size: 14px;
+    color: #fff;
+}
+
+/* タブレットCSS */
+@media screen and (max-width:1039px) {
+    #about {
+        padding: 0 30px;
+    }
+
+    #about-image {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width:959px) {
+
+    /* hamburger-menu表示 */
+    .hamburger-menu {
+        display: block;
+    }
+
+    #under-entry-button {
+        display: block;
+    }
+
+    nav {
+        display: none;
+    }
+
+    #under-entry-button {
+        display: block;
+        position: sticky;
+        bottom: 0;
+        left: 0;
+    }
+
+    #top-text .inner::before {
+        height: 300px;
+    }
+
+    /* チェック時に表示 */
+    #menu-btn:checked~nav {
+        display: block;
+    }
+
+    #sub-text {
+        margin-bottom: 50px;
+    }
+
+    #point-flex {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #point-title {
+        width: 300px;
+        margin: 0 auto;
+    }
+
+    #point-image {
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        max-width: 100px;
+    }
+
+    #point h2 {
+        font-size: 30px;
+        color: #fff;
+    }
+
+    #point-title h2 {
+        text-indent: 0;
+        text-align: center;
+    }
+
+    #course .inner .course-text {
+        width: 100%;
+        padding: 30px;
+    }
+
+    #course .inner .course-image {
+        width: 100%;
+        padding: 30px;
+    }
+
+    #programming-guide h2 {
+        width: 80%;
+    }
+
+    #programming-text2 {
+        width: 90%;
+        margin: 0 auto;
+        padding: 50px 40px 0 40px;
+    }
+
+    #programming-text2 br {
+        display: none;
+    }
+
+    #guide-flex h3 {
+        font-size: 25px;
+    }
+
+    #guide-flex p {
+        font-size: 16px;
+    }
+
+    .circle {
+        width: 200px;
+        height: 200px;
+        aspect-ratio: 1;
+    }
+
+    #programming-teacher #teacher-text p {
+        font-size: 16px;
+    }
+
+    #link {
+        padding: 130px 30px 0 30px;
+    }
+
+    #link .inner {
+        padding: 50px 30px;
+    }
+
+    #about {
+        padding: 0 30px;
+    }
+
+    #entry a {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:659px) {
+    #guide-flex {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* SP css */
+@media screen and (max-width:599px) {
+
+    h2 {
+        font-size: 30px;
+    }
+
+    h3 {
+        font-size: 25px;
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    #top-text .inner::before {
+        height: 275px;
+    }
+
+    #top-text h3 {
+        font-size: 25px;
+    }
+
+    #sub-text .inner p .yellow {
+        font-size: 22px;
+    }
+
+    #sub-text .inner {
+        padding: 130px 20px 0 20px;
+    }
+
+    #sub-text .inner br {
+        display: inline;
+    }
+
+    #course h2 {
+        width: 200px;
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .course-flex {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #course .inner .course-image {
+        padding: 0 30px 30px 30px;
+    }
+
+    #course .inner .course-image img {
+        margin: auto;
+    }
+
+    #programming h2 {
+        font-size: 25px;
+    }
+
+    #programming-text1 {
+        padding: 0 30px 0 30px
+    }
+
+    #programming-text1 p {
+        font-size: 25px;
+    }
+
+    #programming-text1 ul li {
+        font-size: 16px;
+    }
+
+    #programming-guide ul li {
+        padding-top: 10%;
+        font-size: 20px;
+    }
+
+    #programming-text2 .big-text {
+        font-size: 25px;
+    }
+
+    #programming-guide ul li:nth-last-of-type(2) {
+        padding-top: 8%;
+    }
+
+    #programming-guide h2 {
+        width: 90%;
+        font-size: 20px;
+    }
+
+    #guide-flex h3 {
+        font-size: 16px;
+    }
+
+    #guide-flex p {
+        font-size: 14px;
+    }
+
+    #programming-teacher-flex {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #programming-teacher figure {
+        width: 80%;
+    }
+
+    #programming-teacher #teacher-text {
+        width: 80%;
+        padding: 0;
+        text-align: center;
+    }
+
+    #entry a {
+        font-size: 20px;
+    }
+
+    /* entry page */
+    #entry-page h3 {
+        padding: 0 20px;
+    }
+}
